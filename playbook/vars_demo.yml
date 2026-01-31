@@ -1,0 +1,9 @@
+---
+- name: Vars demo
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: show message
+      ansible.builtin.debug:
+        msg: "message={{ message | default('NOT_SET') }}, env={{ env | default('NOT_SET') }}"
+        
